@@ -155,6 +155,12 @@ Open:
 
 This frontend server proxies `/api/*` to backend `127.0.0.1:8000`, so the browser only needs port `5500`.
 
+## GitHub Pages Notes
+
+- Repository root now redirects to `frontend/index.html`, so project Pages URL should open the app shell.
+- GitHub Pages only hosts static frontend files; backend API is **not** hosted there by default.
+- To make login/API work on Pages, host backend separately and set valid CORS/host envs (`ALLOWED_ORIGINS`, `ALLOWED_HOSTS`) for your Pages domain.
+
 ## Custom Domain Deployment
 
 - Use the Nginx template at [deploy/nginx-clinic.conf](deploy/nginx-clinic.conf)
