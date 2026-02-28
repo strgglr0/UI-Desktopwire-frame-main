@@ -20,14 +20,10 @@ DB_PATH = DB_DIR / "clinic.db"
 app = FastAPI(title="Clinic Admin API", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5500",
-        "http://127.0.0.1:5500",
-    ],
-    allow_origin_regex=r"https://.*-\d+\.app\.github\.dev",
+    allow_origins=["*"],
     allow_credentials=False,
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*", "Authorization", "Content-Type"],
 )
 
 
@@ -59,26 +55,26 @@ def get_conn() -> sqlite3.Connection:
 def seed_state() -> Dict[str, Any]:
     return {
         "staff": [
-            {"id": "S-001", "name": "Dr. Marco Santos", "category": "Doctors", "department": "Manual Therapy", "role": "Doctor", "credentials": "MD, PTRP", "active": True},
-            {"id": "S-002", "name": "Nurse Jamie Cruz", "category": "Nurses", "department": "Sports Rehab", "role": "Nurse", "credentials": "RN", "active": True},
-            {"id": "S-003", "name": "Rosa Santos", "category": "Admin Staff", "department": "Admin", "role": "Admin Officer", "credentials": "BS Admin", "active": True},
-            {"id": "S-004", "name": "Ben Lim", "category": "Nurses", "department": "Neurological PT", "role": "Nurse", "credentials": "RN", "active": False},
+            {"id": "S-001", "name": "Lara Santos", "category": "Physical Therapists", "department": "Orthopedic Rehabilitation", "role": "Senior Physical Therapist", "credentials": "PTRP", "active": True},
+            {"id": "S-002", "name": "Jamie Cruz", "category": "PT Assistants", "department": "Sports Rehabilitation", "role": "PT Assistant", "credentials": "BSPT", "active": True},
+            {"id": "S-003", "name": "Rosa Santos", "category": "Front Desk/Admin", "department": "Admin", "role": "Front Desk Officer", "credentials": "BS Admin", "active": True},
+            {"id": "S-004", "name": "Ben Lim", "category": "Rehab Aides", "department": "Neurological Rehabilitation", "role": "Rehab Aide", "credentials": "Rehab Aide NC II", "active": False},
         ],
         "attendance": [
-            {"staffId": "S-001", "name": "Dr. Marco Santos", "department": "Manual Therapy", "date": "2026-02-28", "timeIn": "07:55", "timeOut": "17:20", "hours": 9.4, "ot": 1.4, "onCall": 0.0, "leave": 0.0, "status": "Present"},
-            {"staffId": "S-002", "name": "Nurse Jamie Cruz", "department": "Sports Rehab", "date": "2026-02-28", "timeIn": "08:10", "timeOut": "16:00", "hours": 7.8, "ot": 0.0, "onCall": 0.0, "leave": 0.0, "status": "Late"},
+            {"staffId": "S-001", "name": "Lara Santos", "department": "Orthopedic Rehabilitation", "date": "2026-02-28", "timeIn": "07:55", "timeOut": "17:20", "hours": 9.4, "ot": 1.4, "onCall": 0.0, "leave": 0.0, "status": "Present"},
+            {"staffId": "S-002", "name": "Jamie Cruz", "department": "Sports Rehabilitation", "date": "2026-02-28", "timeIn": "08:10", "timeOut": "16:00", "hours": 7.8, "ot": 0.0, "onCall": 0.0, "leave": 0.0, "status": "Late"},
             {"staffId": "S-003", "name": "Rosa Santos", "department": "Admin", "date": "2026-02-28", "timeIn": "08:00", "timeOut": "16:00", "hours": 8.0, "ot": 0.0, "onCall": 0.0, "leave": 0.0, "status": "Present"},
-            {"staffId": "S-004", "name": "Ben Lim", "department": "Neurological PT", "date": "2026-02-28", "timeIn": "—", "timeOut": "—", "hours": 0.0, "ot": 0.0, "onCall": 0.0, "leave": 1.0, "status": "On Leave"},
+            {"staffId": "S-004", "name": "Ben Lim", "department": "Neurological Rehabilitation", "date": "2026-02-28", "timeIn": "—", "timeOut": "—", "hours": 0.0, "ot": 0.0, "onCall": 0.0, "leave": 1.0, "status": "On Leave"},
         ],
         "requests": [
-            {"id": "REQ-001", "type": "Leave", "employee": "Nurse Jamie Cruz", "details": "Mar 02-03", "reason": "Family commitment", "status": "Pending", "requestedBy": "Staff", "decidedBy": "", "log": ""},
-            {"id": "REQ-002", "type": "OT", "employee": "Dr. Marco Santos", "details": "4 hours", "reason": "Emergency case", "status": "Pending", "requestedBy": "Staff", "decidedBy": "", "log": ""},
+            {"id": "REQ-001", "type": "Leave", "employee": "Jamie Cruz", "details": "Mar 02-03", "reason": "Family commitment", "status": "Pending", "requestedBy": "Staff", "decidedBy": "", "log": ""},
+            {"id": "REQ-002", "type": "OT", "employee": "Lara Santos", "details": "4 hours", "reason": "Extended therapy sessions", "status": "Pending", "requestedBy": "Staff", "decidedBy": "", "log": ""},
             {"id": "REQ-003", "type": "Shift Change", "employee": "Ben Lim", "details": "Morning → Afternoon", "reason": "Medical checkup", "status": "Pending", "requestedBy": "Staff", "decidedBy": "", "log": ""},
-            {"id": "REQ-004", "type": "System Change", "employee": "HR Admin", "details": "Add role permission", "reason": "Process update", "status": "Pending", "requestedBy": "Admin", "decidedBy": "", "log": ""},
+            {"id": "REQ-004", "type": "Clinic Workflow Change", "employee": "HR Admin", "details": "Update treatment note sign-off flow", "reason": "Process update", "status": "Pending", "requestedBy": "Admin", "decidedBy": "", "log": ""},
         ],
         "reports": [
-            {"id": "RPT-001", "category": "Medical Reports", "title": "Patient Discharge Summary", "submittedBy": "Dr. Marco Santos", "status": "Pending Manager Review", "managerSign": "", "finalSign": "", "comments": ""},
-            {"id": "RPT-002", "category": "Clinical Reports", "title": "Weekly Clinical Outcomes", "submittedBy": "Nurse Jamie Cruz", "status": "Pending Manager Review", "managerSign": "", "finalSign": "", "comments": ""},
+            {"id": "RPT-001", "category": "Therapy Reports", "title": "Patient Progress Summary", "submittedBy": "Lara Santos", "status": "Pending Manager Review", "managerSign": "", "finalSign": "", "comments": ""},
+            {"id": "RPT-002", "category": "Operations Reports", "title": "Weekly Therapy Outcomes", "submittedBy": "Jamie Cruz", "status": "Pending Manager Review", "managerSign": "", "finalSign": "", "comments": ""},
             {"id": "RPT-003", "category": "Financial Reports", "title": "Monthly Revenue Snapshot", "submittedBy": "Finance Officer", "status": "Pending Final Approval", "managerSign": "Manager User", "finalSign": "", "comments": ""},
             {"id": "RPT-004", "category": "Audit Reports", "title": "System Access Audit", "submittedBy": "System", "status": "Pending Final Approval", "managerSign": "Manager User", "finalSign": "", "comments": ""},
         ],
@@ -490,7 +486,7 @@ def report_generate(current: AuthUser = Depends(get_current_user)) -> Dict[str, 
         state = load_state(conn)
         item = {
             "id": f"GEN-{int(datetime.now().timestamp())}",
-            "name": f"Hospital Bundle {datetime.now().strftime('%Y-%m-%d')}",
+            "name": f"PT Clinic Bundle {datetime.now().strftime('%Y-%m-%d')}",
             "generatedBy": current.full_name,
             "createdAt": utc_now(),
         }

@@ -1,33 +1,18 @@
-function resolveApiBase() {
-  const { protocol, hostname } = window.location;
-
-  if (hostname.endsWith('.app.github.dev')) {
-    const apiHost = hostname.replace(/-\d+\.app\.github\.dev$/, '-8000.app.github.dev');
-    return `${protocol}//${apiHost}/api`;
-  }
-
-  if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    return `${protocol}//${hostname}:8000/api`;
-  }
-
-  return `${protocol}//${hostname}:8000/api`;
-}
-
-const API_BASE = resolveApiBase();
+const API_BASE = '/api';
 const SESSION_KEY = 'clinic-session';
 
 const USERS = {
-  hradmin: { roleLabel: 'HR Admin', portalLabel: 'Hospital HR Admin Menu' },
-  supervisor: { roleLabel: 'Supervisor', portalLabel: 'Medical Supervisor Menu' },
+  hradmin: { roleLabel: 'HR Admin', portalLabel: 'PT Clinic HR Admin Menu' },
+  supervisor: { roleLabel: 'Supervisor', portalLabel: 'PT Clinic Supervisor Menu' },
   manager: { roleLabel: 'Manager', portalLabel: 'Clinic Manager Menu' },
-  superadmin: { roleLabel: 'Super Admin', portalLabel: 'Hospital Super Admin Menu' }
+  superadmin: { roleLabel: 'Super Admin', portalLabel: 'PT Clinic Super Admin Menu' }
 };
 
 const NAV_BY_ROLE = {
   hradmin: [
     { id: 'dashboard', label: '🏠 Dashboard' },
-    { id: 'hr-payroll', label: '💰 Generate Medical Payroll' },
-    { id: 'hr-staff', label: '👥 Medical Staff Management' }
+    { id: 'hr-payroll', label: '💰 Generate PT Staff Payroll' },
+    { id: 'hr-staff', label: '👥 PT Staff Management' }
   ],
   supervisor: [
     { id: 'dashboard', label: '🏠 Dashboard' },
@@ -37,14 +22,14 @@ const NAV_BY_ROLE = {
   manager: [
     { id: 'dashboard', label: '🏠 Dashboard' },
     { id: 'mgr-attendance', label: '🗓️ View Staff Attendance' },
-    { id: 'mgr-summaries', label: '📋 View Medical Summaries' },
-    { id: 'mgr-reports', label: '📝 Approve Medical Reports' }
+    { id: 'mgr-summaries', label: '📋 View Therapy Summaries' },
+    { id: 'mgr-reports', label: '📝 Approve Therapy Reports' }
   ],
   superadmin: [
     { id: 'dashboard', label: '🏠 Dashboard' },
-    { id: 'sa-data', label: '🏥 View All Hospital Data' },
-    { id: 'sa-generate', label: '📊 Generate Hospital Reports' },
-    { id: 'sa-system', label: '⚙️ Manage Hospital System' },
+    { id: 'sa-data', label: '🏥 View All Clinic Data' },
+    { id: 'sa-generate', label: '📊 Generate Clinic Reports' },
+    { id: 'sa-system', label: '⚙️ Manage Clinic System' },
     { id: 'sa-requests', label: '✅ Approve All Requests' },
     { id: 'sa-reports', label: '✍️ Approve All Reports' }
   ]
@@ -136,7 +121,7 @@ function bindAppActions() {
       } else if (action === 'mgr-approve-report') {
         await apiFetch(`/reports/${id}/manager-approve`, { method: 'POST' });
       } else if (action === 'mgr-return-report') {
-        const comments = prompt('Add revision comments:', 'Please update missing clinical details.') || '';
+        const comments = prompt('Add revision comments:', 'Please update missing therapy details.') || '';
         await apiFetch(`/reports/${id}/manager-return`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -144,7 +129,7 @@ function bindAppActions() {
         });
       } else if (action === 'sa-final-approve-report') {
         await apiFetch(`/reports/${id}/final-approve`, { method: 'POST' });
-      } else if (action === 'generate-hospital-report') {
+      } else if (action === 'generate-clinic-report') {
         await apiFetch('/reports/generate-comprehensive', { method: 'POST' });
       } else if (action === 'reset-demo-data') {
         await apiFetch('/system/reset', { method: 'POST' });
@@ -271,29 +256,29 @@ function renderScreen(screenId) {
   }
 
   if (screenId === 'dashboard') {
-    document.getElementById('screen-title').textContent = 'Hospital Admin Dashboard';
+    document.getElementById('screen-title').textContent = 'PT Clinic Admin Dashboard';
     screen.innerHTML = dashboardHtml(data, role);
     return;
   }
 
   const map = {
     hradmin: {
-      'hr-payroll': ['Generate Medical Staff Payroll', hrPayrollHtml],
-      'hr-staff': ['Manage Medical Staff', hrStaffHtml]
+      'hr-payroll': ['Generate PT Staff Payroll', hrPayrollHtml],
+      'hr-staff': ['Manage PT Staff', hrStaffHtml]
     },
     supervisor: {
-      'sup-attendance': ['View Medical Staff Attendance', supervisorAttendanceHtml],
-      'sup-requests': ['Review Medical Staff Requests', supervisorRequestsHtml]
+      'sup-attendance': ['View PT Staff Attendance', supervisorAttendanceHtml],
+      'sup-requests': ['Review PT Staff Requests', supervisorRequestsHtml]
     },
     manager: {
       'mgr-attendance': ['View Staff Attendance', managerAttendanceHtml],
-      'mgr-summaries': ['View Medical Summaries', managerSummariesHtml],
-      'mgr-reports': ['Review Medical Reports', managerReportsHtml]
+      'mgr-summaries': ['View Therapy Summaries', managerSummariesHtml],
+      'mgr-reports': ['Review Therapy Reports', managerReportsHtml]
     },
     superadmin: {
-      'sa-data': ['View Complete Hospital Data', superAdminDataHtml],
+      'sa-data': ['View Complete Clinic Data', superAdminDataHtml],
       'sa-generate': ['Generate Comprehensive Reports', superAdminGenerateHtml],
-      'sa-system': ['Manage Hospital System', superAdminSystemHtml],
+      'sa-system': ['Manage Clinic System', superAdminSystemHtml],
       'sa-requests': ['Review All Pending Requests', superAdminRequestsHtml],
       'sa-reports': ['Review All Pending Reports', superAdminReportsHtml]
     }
@@ -301,7 +286,7 @@ function renderScreen(screenId) {
 
   const target = map[role]?.[screenId];
   if (!target) {
-    document.getElementById('screen-title').textContent = 'Hospital Admin Dashboard';
+    document.getElementById('screen-title').textContent = 'PT Clinic Admin Dashboard';
     screen.innerHTML = dashboardHtml(data, role);
     return;
   }
@@ -317,10 +302,10 @@ function dashboardHtml(data, role) {
   const activeStaff = data.staff.filter((s) => s.active).length;
 
   const roleMenuTitle = {
-    hradmin: 'Hospital HR Admin Menu',
-    supervisor: 'Medical Supervisor Menu',
+    hradmin: 'PT Clinic HR Admin Menu',
+    supervisor: 'PT Clinic Supervisor Menu',
     manager: 'Clinic Manager Menu',
-    superadmin: 'Hospital Super Admin Menu'
+    superadmin: 'PT Clinic Super Admin Menu'
   }[role];
 
   return `
@@ -330,7 +315,7 @@ function dashboardHtml(data, role) {
       <article class="card"><h3>System State</h3><p class="muted">Query / Modify / Update / Store operations are handled by backend APIs with authorization checks.</p></article>
     </div>
     <div class="grid">
-      <article class="card"><h3>Active Medical Staff</h3><div class="kpi">${activeStaff}</div></article>
+      <article class="card"><h3>Active PT Staff</h3><div class="kpi">${activeStaff}</div></article>
       <article class="card"><h3>Pending Requests</h3><div class="kpi">${pendingRequests}</div></article>
       <article class="card"><h3>Pending Manager Reports</h3><div class="kpi">${pendingMgrReports}</div></article>
       <article class="card"><h3>Pending Final Reports</h3><div class="kpi">${pendingFinalReports}</div></article>
@@ -379,17 +364,17 @@ function hrStaffHtml(data) {
   return `
     <div class="split">
       <article class="card">
-        <h3>Register Medical Staff</h3>
+        <h3>Register PT Staff</h3>
         <form id="register-staff-form" class="mini-form">
           <input name="name" placeholder="Full name" required />
-          <select name="category" required><option>Doctors</option><option>Nurses</option><option>Admin Staff</option></select>
+          <select name="category" required><option>Physical Therapists</option><option>PT Assistants</option><option>Rehab Aides</option><option>Front Desk/Admin</option></select>
           <input name="department" placeholder="Department" required />
           <input name="role" placeholder="Assigned Role" required />
           <input name="credentials" placeholder="Credentials" required />
           <button class="btn btn-primary" type="submit">Register New Staff</button>
         </form>
       </article>
-      <article class="card"><h3>Medical Staff Accounts</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>ID</th><th>Name</th><th>Category</th><th>Department</th><th>Role</th><th>Credentials</th><th>Status</th><th>Action</th></tr></thead><tbody>${rows}</tbody></table></div></article>
+      <article class="card"><h3>PT Staff Accounts</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>ID</th><th>Name</th><th>Category</th><th>Department</th><th>Role</th><th>Credentials</th><th>Status</th><th>Action</th></tr></thead><tbody>${rows}</tbody></table></div></article>
     </div>
   `;
 }
@@ -422,22 +407,22 @@ function managerAttendanceHtml(data) {
 }
 
 function managerSummariesHtml() {
-  return `<div class="grid"><article class="card"><h3>Patient Statistics</h3><div class="kpi">46</div></article><article class="card"><h3>Staff Performance</h3><div class="kpi">4.7</div></article><article class="card"><h3>Resource Usage</h3><div class="kpi">78%</div></article><article class="card"><h3>Performance Metrics</h3><div class="kpi">92%</div></article></div>`;
+  return `<div class="grid"><article class="card"><h3>Patient Caseload</h3><div class="kpi">46</div></article><article class="card"><h3>Therapist Performance</h3><div class="kpi">4.7</div></article><article class="card"><h3>Resource Usage</h3><div class="kpi">78%</div></article><article class="card"><h3>Treatment Outcomes</h3><div class="kpi">92%</div></article></div>`;
 }
 
 function managerReportsHtml(data) {
   const queue = data.reports.filter((r) => r.status === 'Pending Manager Review' || r.status === 'Returned for Revision');
   const rows = queue.map((r) => `<div class="item item-block"><div><strong>${r.title}</strong><br><span>${r.category} · ${r.submittedBy}</span><br><span>Status: ${statusBadge(r.status)}</span></div><div class="actions">${r.status === 'Pending Manager Review' ? `<button class="btn btn-primary btn-sm" data-action="mgr-approve-report" data-id="${r.id}">Sign & Approve</button><button class="btn btn-danger btn-sm" data-action="mgr-return-report" data-id="${r.id}">Return</button>` : ''}</div></div>`).join('');
-  return `<article class="card"><h3>Review Medical Reports</h3><div class="list">${rows || '<p class="muted">No reports awaiting manager action.</p>'}</div></article>`;
+  return `<article class="card"><h3>Review Therapy Reports</h3><div class="list">${rows || '<p class="muted">No reports awaiting manager action.</p>'}</div></article>`;
 }
 
 function superAdminDataHtml(data) {
-  return `<div class="grid"><article class="card"><h3>Patient Records</h3><div class="kpi">1,482</div></article><article class="card"><h3>Staff Data</h3><div class="kpi">${data.staff.length}</div></article><article class="card"><h3>Financial Data</h3><div class="kpi">₱4.2M</div></article><article class="card"><h3>System Logs</h3><div class="kpi">${data.auditLogs.length}</div></article></div>`;
+  return `<div class="grid"><article class="card"><h3>Patient Caseload Records</h3><div class="kpi">1,482</div></article><article class="card"><h3>Staff Data</h3><div class="kpi">${data.staff.length}</div></article><article class="card"><h3>Financial Data</h3><div class="kpi">₱4.2M</div></article><article class="card"><h3>System Logs</h3><div class="kpi">${data.auditLogs.length}</div></article></div>`;
 }
 
 function superAdminGenerateHtml(data) {
   const rows = data.generatedHospitalReports.map((r) => `<tr><td>${r.name}</td><td>${r.generatedBy}</td><td>${r.createdAt}</td></tr>`).join('');
-  return `<article class="card"><h3>Generate Comprehensive Reports</h3><button class="btn btn-primary" data-action="generate-hospital-report">Generate Hospital Report Bundle</button><div class="tbl-wrap" style="margin-top:12px"><table class="tbl"><thead><tr><th>Report Bundle</th><th>Generated By</th><th>Date</th></tr></thead><tbody>${rows || '<tr><td colspan="3" class="muted">No generated reports yet.</td></tr>'}</tbody></table></div></article>`;
+  return `<article class="card"><h3>Generate Comprehensive Reports</h3><button class="btn btn-primary" data-action="generate-clinic-report">Generate PT Clinic Report Bundle</button><div class="tbl-wrap" style="margin-top:12px"><table class="tbl"><thead><tr><th>Clinic Report Bundle</th><th>Generated By</th><th>Date</th></tr></thead><tbody>${rows || '<tr><td colspan="3" class="muted">No generated reports yet.</td></tr>'}</tbody></table></div></article>`;
 }
 
 function superAdminSystemHtml(data) {

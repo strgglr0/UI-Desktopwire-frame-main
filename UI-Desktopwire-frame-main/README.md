@@ -29,11 +29,13 @@ From project root:
 
 From project root:
 
-`cd frontend && python3 -m http.server 5500`
+`cd frontend && python3 dev_server.py`
 
 Open:
 
 `http://localhost:5500/index.html`
+
+This frontend server proxies `/api/*` to backend `127.0.0.1:8000`, so the browser only needs port `5500`.
 
 ## Default Accounts
 
