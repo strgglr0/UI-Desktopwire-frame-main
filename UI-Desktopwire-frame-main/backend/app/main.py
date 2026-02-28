@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from fastapi import Depends, FastAPI, Header, HTTPException
+from fastapi import Depends, FastAPI, Header, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, Field
 
@@ -20,8 +20,12 @@ DB_PATH = DB_DIR / "clinic.db"
 app = FastAPI(title="Clinic Admin API", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5500", "http://127.0.0.1:5500", "*"],
-    allow_credentials=True,
+    allow_origins=[
+        "http://localhost:5500",
+        "http://127.0.0.1:5500",
+    ],
+    allow_origin_regex=r"https://.*-\d+\.app\.github\.dev",
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -246,6 +250,20 @@ def add_audit(state: Dict[str, Any], msg: str) -> None:
 @app.get("/api/health")
 def health() -> Dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/")
+def root() -> Dict[str, str]:
+    return {
+        "service": "Clinic Admin API",
+        "status": "ok",
+        "health": "/api/health",
+    }
+
+
+@app.get("/favicon.ico")
+def favicon() -> Response:
+    return Response(status_code=204)
 
 
 @app.post("/api/auth/login")

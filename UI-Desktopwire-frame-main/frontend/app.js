@@ -1,4 +1,19 @@
-const API_BASE = 'http://localhost:8000/api';
+function resolveApiBase() {
+  const { protocol, hostname } = window.location;
+
+  if (hostname.endsWith('.app.github.dev')) {
+    const apiHost = hostname.replace(/-\d+\.app\.github\.dev$/, '-8000.app.github.dev');
+    return `${protocol}//${apiHost}/api`;
+  }
+
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return `${protocol}//${hostname}:8000/api`;
+  }
+
+  return `${protocol}//${hostname}:8000/api`;
+}
+
+const API_BASE = resolveApiBase();
 const SESSION_KEY = 'clinic-session';
 
 const USERS = {
