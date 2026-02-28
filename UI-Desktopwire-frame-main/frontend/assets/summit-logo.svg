@@ -1,0 +1,14 @@
+<svg width="840" height="300" viewBox="0 0 840 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="840" height="300" fill="transparent"/>
+
+  <polygon points="90,250 255,50 410,250" fill="#1F3A68"/>
+  <polygon points="290,250 450,10 620,250" fill="#A5CC43"/>
+  <polygon points="585,250 690,85 775,250" fill="#CFCFD4"/>
+
+  <path d="M268 205C326 113 403 70 451 66C446 88 441 101 434 116C402 129 357 169 331 212L268 205Z" fill="white"/>
+  <path d="M332 234C357 183 388 131 426 93C477 41 521 54 550 81C558 88 566 99 572 113C551 102 530 101 513 109C496 117 483 136 476 158C468 183 470 206 474 230L426 246C414 217 413 185 422 153C429 128 443 106 461 90C434 97 398 130 372 170C355 196 342 220 333 240L332 234Z" fill="white"/>
+  <circle cx="462" cy="116" r="19" fill="white"/>
+
+  <text x="89" y="292" fill="#1F3A68" font-family="Segoe UI, Arial, sans-serif" font-size="66" font-weight="800" letter-spacing="6">SUMMIT</text>
+  <text x="312" y="292" fill="#233447" font-family="Segoe UI, Arial, sans-serif" font-size="54" font-weight="700">PT CLINIC</text>
+</svg>
