@@ -1,0 +1,441 @@
+INFO:     Will watch for changes in these directories: ['/workspaces/UI-Desktopwire-frame-main/UI-Desktopwire-frame-main']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [84994] using WatchFiles
+INFO:     Started server process [85018]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/requests/REQ-002/decision HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "DELETE /api/staff/S-002 HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [85018]
+INFO:     Started server process [86799]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [86799]
+INFO:     Started server process [89389]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89389]
+INFO:     Started server process [89589]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89589]
+INFO:     Started server process [89709]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89709]
+INFO:     Started server process [89975]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/reports/RPT-001/manager-approve HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/reports/RPT-002/manager-return HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/reports/RPT-002/manager-return HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/admin-change-requests/ACR-1772295815153/decision HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/reports/RPT-004/final-approve HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/reports/generate-comprehensive HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/requests/REQ-003/decision HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89975]
+INFO:     Started server process [95118]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "POST /api/requests/REQ-003/decision HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [95118]
+INFO:     Started server process [95686]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/reports/generate-comprehensive HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/staff/S-004/toggle HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [95686]
+INFO:     Started server process [98027]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/save-latest HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/save-latest HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "DELETE /api/reports/generated/GEN-1772296420 HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [98027]
+INFO:     Started server process [99644]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/staff-update HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/staff-update HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/save-latest HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [99644]
+INFO:     Started server process [104636]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [104636]
+INFO:     Started server process [104802]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/staff/S-001/toggle HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/staff/S-001/toggle HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [104802]
+INFO:     Started server process [106115]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [106115]
+INFO:     Started server process [107508]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [107508]
+INFO:     Started server process [110853]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [110853]
+INFO:     Started server process [110966]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [110966]
+INFO:     Started server process [111063]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/reports/RPT-001/manager-approve HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/reports/RPT-002/manager-approve HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 401 Unauthorized
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [111063]
+INFO:     Started server process [118547]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [118547]
+INFO:     Started server process [120062]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "DELETE /api/reports/generated/GEN-1772295944 HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [120062]
+INFO:     Started server process [124245]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/staff-update HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/save-latest HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/save-latest HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [124245]
+INFO:     Started server process [136073]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/payroll/run HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [136073]
+WARNING:  WatchFiles detected changes in 'backend/app/main.py'. Reloading...
+INFO:     Started server process [143096]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [143145]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

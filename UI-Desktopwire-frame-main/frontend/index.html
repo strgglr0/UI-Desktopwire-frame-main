@@ -69,6 +69,23 @@
     </main>
   </section>
 
+  <section id="app-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h3 id="modal-title">Action</h3>
+        <button id="modal-close-btn" class="btn btn-outline btn-sm" type="button">Close</button>
+      </div>
+      <p id="modal-subtitle" class="muted"></p>
+      <form id="modal-form" class="mini-form">
+        <div id="modal-fields"></div>
+        <div class="modal-actions">
+          <button id="modal-cancel-btn" class="btn btn-outline" type="button">Cancel</button>
+          <button id="modal-submit-btn" class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
   <script src="./app.js"></script>
 </body>
 </html>
