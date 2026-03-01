@@ -7,3 +7,12 @@
 
   ➜  Local:   http://localhost:5500/
   ➜  Network: http://10.0.1.192:5500/
+4:59:41 AM [vite] page reload index.html
+4:59:41 AM [vite] hmr update /src/App.jsx, /src/index.css
+4:59:41 AM [vite] vite.config.js changed, restarting server...
+4:59:41 AM [vite] hmr update /src/index.css
+4:59:41 AM [vite] page reload src/main.jsx
+4:59:41 AM [vite] hmr update /src/App.jsx, /src/index.css
+4:59:41 AM [vite] hmr update /src/LegacyPortal.jsx, /src/index.css
+4:59:41 AM [vite] page reload tailwind.config.js
+4:59:41 AM [vite] server restarted.
