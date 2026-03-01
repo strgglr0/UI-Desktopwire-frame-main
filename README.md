@@ -130,6 +130,26 @@ Production/domain environment variables (example):
 
 `ALLOWED_HOSTS=clinic.example.com,www.clinic.example.com`
 
+## Optional Firebase State Store
+
+The backend can store shared app state (`staff`, `attendance`, `requests`, `reports`, payroll runs, logs) in Firebase Firestore.
+
+Authentication users/sessions remain in SQLite by default, while shared workflow state can be switched to Firebase.
+
+Set these environment variables before starting backend:
+
+- `FIREBASE_ENABLED=true`
+- `FIREBASE_CREDENTIALS_PATH=/absolute/path/to/service-account.json`
+	- or `FIREBASE_CREDENTIALS_JSON={...}` (raw JSON string)
+- Optional: `FIREBASE_COLLECTION=clinic_admin`
+- Optional: `FIREBASE_DOCUMENT=app_state`
+
+Behavior:
+
+- If Firebase is enabled and credentials are valid, backend uses Firestore for state reads/writes.
+- If Firebase is misconfigured/unavailable, backend automatically falls back to SQLite app state.
+- Health endpoint returns active state backend via `stateStore` field (`firebase` or `sqlite`).
+
 ## Run Both (One Command)
 
 From project root:

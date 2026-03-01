@@ -15,11 +15,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from pydantic import BaseModel, EmailStr, Field
 
+from backend.app.services.firebase_state import FirebaseStateStore
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_DIR = BASE_DIR / "data"
 DB_PATH = DB_DIR / "clinic.db"
 
 app = FastAPI(title="Clinic Admin API", version="1.0.0")
+STATE_STORE = FirebaseStateStore.from_env()
 
 
 def _csv_env(name: str, default: str) -> list[str]:
@@ -195,9 +198,15 @@ def init_db() -> None:
 @app.on_event("startup")
 def startup_event() -> None:
     init_db()
+    if STATE_STORE.enabled:
+        with get_conn() as conn:
+            local_state = _load_state_sqlite(conn)
+        remote_state = STATE_STORE.load_state()
+        if remote_state is None:
+            STATE_STORE.save_state(local_state)
 
 
-def load_state(conn: sqlite3.Connection) -> Dict[str, Any]:
+def _load_state_sqlite(conn: sqlite3.Connection) -> Dict[str, Any]:
     row = conn.execute("SELECT data_json FROM app_state WHERE id = 1").fetchone()
     if not row:
         state = seed_state()
@@ -206,8 +215,28 @@ def load_state(conn: sqlite3.Connection) -> Dict[str, Any]:
     return json.loads(row["data_json"])
 
 
-def save_state(conn: sqlite3.Connection, state: Dict[str, Any]) -> None:
+def _save_state_sqlite(conn: sqlite3.Connection, state: Dict[str, Any]) -> None:
     conn.execute("UPDATE app_state SET data_json = ?, updated_at = ? WHERE id = 1", (json.dumps(state), utc_now()))
+
+
+def load_state(conn: sqlite3.Connection) -> Dict[str, Any]:
+    if not STATE_STORE.enabled:
+        return _load_state_sqlite(conn)
+
+    remote = STATE_STORE.load_state()
+    if remote is not None:
+        return remote
+
+    local = _load_state_sqlite(conn)
+    STATE_STORE.save_state(local)
+    return local
+
+
+def save_state(conn: sqlite3.Connection, state: Dict[str, Any]) -> None:
+    if STATE_STORE.enabled:
+        STATE_STORE.save_state(state)
+        return
+    _save_state_sqlite(conn, state)
 
 
 class LoginIn(BaseModel):
@@ -583,7 +612,7 @@ def apply_staff_payroll_update(state: Dict[str, Any], payload: Dict[str, Any], a
 
 @app.get("/api/health")
 def health() -> Dict[str, str]:
-    return {"status": "ok"}
+    return {"status": "ok", "stateStore": "firebase" if STATE_STORE.enabled else "sqlite"}
 
 
 @app.get("/")
