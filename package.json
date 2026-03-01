@@ -1,0 +1,11 @@
+{
+  "name": "ui-desktopwire-frame-main",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:all": "bash run_local.sh",
+    "dev:al": "bash run_local.sh",
+    "stop:all": "bash stop_local.sh",
+    "frontend": "npm --prefix frontend run dev -- --host 0.0.0.0 --port 5500"
+  }
+}
