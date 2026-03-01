@@ -1,4 +1,5 @@
 const API_BASE = '/api';
+const API_BASE_KEY = 'clinic-api-base';
 const SESSION_KEY = 'clinic-session';
 const PTSTAFF_APP_URL_KEY = 'ptstaff-app-url';
 
@@ -61,6 +62,7 @@ let payrollPreviewCutoff = '15th';
 let payrollPreviewStaffId = '';
 
 document.addEventListener('DOMContentLoaded', () => {
+  bootstrapApiBaseFromQuery();
   bindLogin();
   bindLogout();
   bindAppActions();
@@ -1272,10 +1274,15 @@ function statusBadge(status) {
 }
 
 async function apiFetch(path, options = {}, auth = true) {
+  const apiBase = resolveApiBase();
+  if (!apiBase) {
+    throw new Error('Backend API is not configured for this deployment. Add ?apiBase=https://your-backend-domain to the URL once, then reload.');
+  }
+
   const headers = { ...(options.headers || {}) };
   if (auth && activeSession?.token) headers.Authorization = `Bearer ${activeSession.token}`;
 
-  const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
+  const res = await fetch(`${apiBase}${path}`, { ...options, headers });
   let body = {};
   try { body = await res.json(); } catch (_e) {}
   if (!res.ok) {
@@ -1286,6 +1293,34 @@ async function apiFetch(path, options = {}, auth = true) {
     throw new Error(body.detail || 'Request failed');
   }
   return body;
+}
+
+function bootstrapApiBaseFromQuery() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const apiBase = String(params.get('apiBase') || '').trim();
+    if (!apiBase) return;
+    localStorage.setItem(API_BASE_KEY, apiBase);
+  } catch (_e) {
+  }
+}
+
+function resolveApiBase() {
+  const fromWindow = String(window.CLINIC_API_BASE || '').trim();
+  const fromStorage = String(localStorage.getItem(API_BASE_KEY) || '').trim();
+  const raw = fromWindow || fromStorage;
+
+  if (!raw) {
+    const host = String(window.location.hostname || '').toLowerCase();
+    if (host.endsWith('github.io')) {
+      return '';
+    }
+    return API_BASE;
+  }
+
+  const normalized = raw.replace(/\/+$/, '');
+  if (/\/api$/i.test(normalized)) return normalized;
+  return `${normalized}/api`;
 }
 
 function showError(msg) {

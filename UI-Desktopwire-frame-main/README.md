@@ -160,6 +160,10 @@ This frontend server proxies `/api/*` to backend `127.0.0.1:8000`, so the browse
 - Repository root now redirects to `frontend/index.html`, so project Pages URL should open the app shell.
 - GitHub Pages only hosts static frontend files; backend API is **not** hosted there by default.
 - To make login/API work on Pages, host backend separately and set valid CORS/host envs (`ALLOWED_ORIGINS`, `ALLOWED_HOSTS`) for your Pages domain.
+- One-time frontend API setup on Pages:
+	- Open your site with query param: `?apiBase=https://your-backend-domain`
+	- Example: `https://strgglr0.github.io/UI-Desktopwire-frame-main/?apiBase=https://api.yourdomain.com`
+	- The frontend stores this value in browser localStorage and uses it for `/api/*` calls
 
 ## Custom Domain Deployment
 
