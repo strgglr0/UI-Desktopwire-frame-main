@@ -4,9 +4,10 @@ Production-oriented split architecture for a hospital/clinic admin system.
 
 ## Structure
 
-- [frontend/index.html](frontend/index.html) — login and role-based admin UI
-- [frontend/styles.css](frontend/styles.css) — UI styling
-- [frontend/app.js](frontend/app.js) — frontend logic + backend API calls
+- [frontend/src](frontend/src) — React frontend source (UI shell + app mount)
+- [frontend/app.js](frontend/app.js) — portal/business logic + backend API calls
+- [frontend/styles.css](frontend/styles.css) — existing portal styling
+- [frontend/tailwind.config.js](frontend/tailwind.config.js) — Tailwind configuration
 - [backend/app/main.py](backend/app/main.py) — FastAPI backend with auth, role permissions, and workflow APIs
 - [backend/requirements.txt](backend/requirements.txt) — backend dependencies
 
@@ -137,7 +138,7 @@ From project root:
 
 This starts:
 - backend on `:8000`
-- frontend proxy on `:5500`
+- React (Vite) frontend on `:5500` with `/api` proxy to backend
 
 Stop both with:
 
@@ -147,13 +148,15 @@ Stop both with:
 
 From project root:
 
-`cd frontend && python3 dev_server.py`
+`cd frontend && npm install`
+
+`npm run dev -- --host 0.0.0.0 --port 5500`
 
 Open:
 
 `http://localhost:5500/index.html`
 
-This frontend server proxies `/api/*` to backend `127.0.0.1:8000`, so the browser only needs port `5500`.
+Vite dev server proxies `/api/*` to backend `127.0.0.1:8000`, so the browser only needs port `5500`.
 
 ## GitHub Pages Notes
 

@@ -81,8 +81,12 @@ let payrollPreviewArmed = false;
 let payrollPreviewCutoff = '15th';
 let payrollPreviewStaffId = '';
 let lastDataSyncAt = null;
+let appInitialized = false;
 
-document.addEventListener('DOMContentLoaded', () => {
+export function initClinicPortal() {
+  if (appInitialized) return;
+  if (!document.getElementById('login-form')) return;
+  appInitialized = true;
   bootstrapApiBaseFromQuery();
   bindLoginSecurity();
   bindLogin();
@@ -91,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
   bindTopbarActions();
   bindModal();
   restoreSession();
-});
+}
 
 function bindLoginSecurity() {
   const passwordInput = document.getElementById('login-password');
