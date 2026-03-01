@@ -182,3 +182,11 @@
 127.0.0.1 - - [01/Mar/2026 03:42:58] "GET /styles.css HTTP/1.1" 200 -
 127.0.0.1 - - [01/Mar/2026 03:42:58] "GET /assets/summit-logo.png HTTP/1.1" 304 -
 127.0.0.1 - - [01/Mar/2026 03:42:58] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2026 03:51:15] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2026 03:51:15] "GET /styles.css HTTP/1.1" 304 -
+127.0.0.1 - - [01/Mar/2026 03:51:15] "GET /assets/eye-open.svg HTTP/1.1" 304 -
+127.0.0.1 - - [01/Mar/2026 03:51:15] "GET /assets/eye-off.svg HTTP/1.1" 304 -
+127.0.0.1 - - [01/Mar/2026 03:51:15] "GET /app.js HTTP/1.1" 304 -
+127.0.0.1 - - [01/Mar/2026 03:51:28] "POST /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2026 03:51:28] "GET /api/data HTTP/1.1" 200 -
+127.0.0.1 - - [01/Mar/2026 03:51:42] "POST /api/auth/logout HTTP/1.1" 200 -
