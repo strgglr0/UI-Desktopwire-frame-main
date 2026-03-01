@@ -121,8 +121,15 @@ function bindLoginSecurity() {
 function bindLogin() {
   document.getElementById('login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const defaultBtnText = submitBtn?.textContent || 'Sign In';
     const email = document.getElementById('login-email').value.trim().toLowerCase();
-    const password = document.getElementById('login-password').value.trim();
+    const password = document.getElementById('login-password').value;
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Signing In...';
+    }
 
     try {
       const result = await apiFetch('/auth/login', {
@@ -137,6 +144,11 @@ function bindLogin() {
       await launchApp();
     } catch (err) {
       showError(err.message || 'Login failed. Access denied.');
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = defaultBtnText;
+      }
     }
   });
 }

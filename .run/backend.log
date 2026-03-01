@@ -9,3 +9,14 @@ INFO:     180.195.66.19:0 - "GET /favicon.ico HTTP/1.1" 204 No Content
 INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
 INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
 INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "GET /api/data HTTP/1.1" 200 OK
+INFO:     180.195.66.19:0 - "POST /api/auth/logout HTTP/1.1" 200 OK
