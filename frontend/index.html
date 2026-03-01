@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUMMIT PT CLINIC - Frontend Portal</title>
+  <link rel="icon" type="image/png" href="./assets/summit-logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <section id="login-screen" class="login-screen">
+    <div class="login-card">
+      <div class="brand">
+        <img src="./assets/summit-logo.png" alt="Summit PT Clinic Logo" class="brand-logo" />
+        <div>
+          <h1>SUMMIT PT CLINIC</h1>
+          <p>Physical Therapy Clinic Admin Access</p>
+        </div>
+      </div>
+
+      <h2>Sign In</h2>
+      <p class="subtitle">Secure login with backend role-based authorization</p>
+
+      <div id="login-error" class="error hidden"></div>
+
+      <form id="login-form" class="form" autocomplete="on">
+        <label>
+          Email
+          <input id="login-email" type="email" placeholder="Email address" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" inputmode="email" maxlength="120" required />
+        </label>
+        <label>
+          Password
+          <div class="password-input-wrap">
+            <input id="login-password" type="password" placeholder="••••••••" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" minlength="4" maxlength="128" required />
+            <button id="toggle-login-password" class="btn btn-outline btn-sm password-toggle-btn" type="button" aria-controls="login-password" aria-label="Show password" aria-pressed="false" title="Show password">
+              <img class="eye-icon eye-open hidden" src="./assets/eye-open.svg" alt="" aria-hidden="true" />
+              <img class="eye-icon eye-off" src="./assets/eye-off.svg" alt="" aria-hidden="true" />
+            </button>
+          </div>
+        </label>
+        <button type="submit" class="btn btn-primary full">Sign In</button>
+      </form>
+
+      <div class="demo-credentials">
+        <p><strong>Clinic Admin Accounts</strong></p>
+        <p>HR Admin: <span>hradmin@summit.ph</span> / <span>Hr@123</span></p>
+        <p>Supervisor: <span>supervisor@summit.ph</span> / <span>Sup@123</span></p>
+        <p>Manager: <span>manager@summit.ph</span> / <span>Mgr@123</span></p>
+        <p>Super Admin: <span>superadmin@summit.ph</span> / <span>Sa@123</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="./assets/summit-logo.png" alt="Summit PT Clinic Logo" class="sidebar-logo" />
+        <h3>SUMMIT PT CLINIC</h3>
+        <p id="portal-label">Portal</p>
+      </div>
+      <nav id="nav-list" class="nav-list"></nav>
+      <div class="sidebar-footer">
+        <div>
+          <strong id="user-name">User</strong>
+          <p id="user-role">Role</p>
+        </div>
+        <button id="logout-btn" class="btn btn-outline">Logout</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h2 id="screen-title">Dashboard</h2>
+        <div class="topbar-actions">
+          <span id="data-sync-label" class="sync-label">Data not synced yet</span>
+          <button id="refresh-data-btn" class="btn btn-outline btn-sm" type="button">Refresh Data</button>
+        </div>
+      </header>
+      <section id="screen-main" class="screen active"></section>
+    </main>
+  </section>
+
+  <section id="app-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h3 id="modal-title">Action</h3>
+        <button id="modal-close-btn" class="btn btn-outline btn-sm" type="button">Close</button>
+      </div>
+      <p id="modal-subtitle" class="muted"></p>
+      <form id="modal-form" class="mini-form">
+        <div id="modal-fields"></div>
+        <div class="modal-actions">
+          <button id="modal-cancel-btn" class="btn btn-outline" type="button">Cancel</button>
+          <button id="modal-submit-btn" class="btn btn-primary" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "python.defaultInterpreterPath": "/workspaces/UI-Desktopwire-frame-main/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.autoImportCompletions": true,
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.experiments.enabled": false,
+  "files.watcherExclude": {
+    "**/.venv/**": true,
+    "**/.venv-1/**": true,
+    "**/venv/**": true,
+    "**/env/**": true
+  },
+  "search.exclude": {
+    "**/.venv/**": true,
+    "**/.venv-1/**": true,
+    "**/venv/**": true,
+    "**/env/**": true
+  }
+}

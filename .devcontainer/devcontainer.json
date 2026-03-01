@@ -1,0 +1,19 @@
+{
+  "name": "ui-desktopwire-frame-main",
+  "workspaceFolder": "/workspaces/UI-Desktopwire-frame-main",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/workspaces/UI-Desktopwire-frame-main/.venv/bin/python",
+        "python.terminal.activateEnvironment": true,
+        "python.experiments.enabled": false,
+        "python.envFile": "${workspaceFolder}/.env"
+      }
+    }
+  },
+  "postCreateCommand": "python3 -m venv .venv && . .venv/bin/activate && python -m pip install --upgrade pip setuptools wheel && pip install -r backend/requirements.txt",
+  "remoteEnv": {
+    "VIRTUAL_ENV": "/workspaces/UI-Desktopwire-frame-main/.venv",
+    "PATH": "/workspaces/UI-Desktopwire-frame-main/.venv/bin:${containerEnv:PATH}"
+  }
+}

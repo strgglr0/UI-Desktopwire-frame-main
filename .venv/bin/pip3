@@ -1,4 +1,4 @@
-#!/workspaces/UI-Desktopwire-frame-main/.venv/bin/python
+#!/workspaces/UI-Desktopwire-frame-main/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
